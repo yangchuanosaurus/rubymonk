@@ -33,13 +33,21 @@ was_not_there = normal[:zig]
 puts "wasn't there:"
 p was_not_there
 
+# Returns a new, empty hash.
+# the value retuened depends on the style of new used to create the hash
+# if obj 'brown' is specified, this single object will be used for all default values.
 usually_brown = Hash.new("brown")
 p usually_brown
-#??????????
 pretending_to_be_there = usually_brown[:zig]
 puts "Pretending to be there"
 p pretending_to_be_there
 puts usually_brown
+
+# While this creates a new default object each time
+h = Hash.new { |hash, key| hash[key] = "Go Fish: #{key}" }
+p h["c"]
+p h["C"]
+p h.keys
 
 chuck_norris = Hash[:punch, 99, :kick, 98, :stops_bullets_with_hands, true]
 p chuck_norris
