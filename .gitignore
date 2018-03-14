@@ -1,0 +1,3 @@
+*.lock
+rspec/.bundle
+rspec/bin
